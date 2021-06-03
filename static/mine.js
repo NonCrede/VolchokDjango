@@ -5,20 +5,20 @@ function loadJson(selector) {
 window.onload = function () {
   let jsonData = loadJson('#jsonData');
 
+let text = jsonData.map((item) => item.question_text);
 let array = jsonData.map((item) => item.id);
 let array2 = [];
 let arrayinp = [];
 let color =[];
 //let a = prompt();
-//let b = 1;
+let b = 1;
 console.log(array);
-//for(let i = 0; i < a; i++) {
-   // color.push("#fde23e");
-    //array.push(b);
-   // arrayinp.push(b);
-    //b = b + 1;
-   // array2.push(0);
-//}
+for(let i = 0; i < array.length; i++) {
+    color.push("#fde23e");
+    arrayinp.push(b);
+    b = b + 1;
+    array2.push(0);
+}
 for (let i = 0; i < 100; i++) {
 
     let rand_number = Math.floor(Math.random() * array.length);
@@ -116,6 +116,7 @@ ptr.addEventListener("click", function(){
     function update(){
         color[array[o] - 1] = "#937e88";
         myPiechart.draw();
+        document.getElementById("p1").innerHTML=[text[o]];
         o = o + 1;
     }
     setTimeout(update, 2500);
