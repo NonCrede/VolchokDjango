@@ -1,0 +1,20 @@
+.wheel {
+    width: 500px;
+    height: 500px;
+    border-radius: 70%;
+    background: black;
+    position: relative;
+}
+
+.wheel_hand {
+    background-color: red ;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 15em;
+    width: 0.5em;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    animation-fill-mode: both;
+}

@@ -1,0 +1,19 @@
+{% load static %}
+<!Doctype HTML>
+<head>
+    <meta charset = "UTF-8">
+    <link rel = "stylesheet" href = "{% static 'mine.css'%}">
+</head>
+<body>
+<div style="display: none" id="jsonData" data-json="{{ data }}"></div>
+<article class = "wheel">
+    <div>
+    <canvas id="myCanvas" width="500" height="500">
+    </canvas>
+    </div>
+    <div class = "wheel_hand"></div>
+</article>
+<script src = "{% static 'mine.js' %}">
+</script>
+
+</body>
