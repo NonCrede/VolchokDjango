@@ -16,16 +16,12 @@ class Ques(models.Model):
 
 class Package(models.Model):
     name = models.CharField("Название пака:", max_length=200, null=True)
-    Quest = models.ManyToManyField(Ques, null=True)
+    Quest = models.ManyToManyField(Ques)
     pack_id = models.AutoField(auto_created=True, primary_key=True, verbose_name='id')
 
     def __str__(self):
         return self.name
 
-
-class PaQues(models.Model):
-    Pack = models.ManyToManyField(Package, null=True)
-    Quest = models.ManyToManyField(Ques, null=True)
 
 
 

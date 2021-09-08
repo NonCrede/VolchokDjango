@@ -14,7 +14,7 @@ class addQuestionForm(forms.ModelForm):
         fields = "__all__"
 
 
-class Multi(forms.ModelForm):
-    class Meta:
-        model = PaQues
-        fields = "__all__"
+#class Multi(forms.ModelForm):
+    #class Meta:
+      #  model = PaQues
+        #fields = "__all__"
