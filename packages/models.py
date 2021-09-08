@@ -8,18 +8,18 @@ from django.views.generic import TemplateView
 
 class Ques(models.Model):
     question_text = models.CharField("Вопрос:", max_length=200, null=True)
-    question_number = models.PositiveIntegerField("Номер:", null=True)
-
-    def __str__(self):
-        return self.question_text
+    Ques_id = models.AutoField(auto_created=True, primary_key=True, verbose_name='id')
 
 
 class Package(models.Model):
-    name = models.CharField("Имя:", max_length=50, null=True)
-    questions = models.ManyToManyField(Ques)
+    name = models.CharField("Название пака:", max_length=200, null=True)
+    Pack_id = models.AutoField(auto_created=True, primary_key=True, verbose_name='id')
 
-    def __str__(self):
-        return self.name
+
+class PaQues(models.Model):
+    Pack = models.ManyToManyField(Package)
+    Quest = models.ManyToManyField(Ques)
+
 
 
 # Create your models here.
