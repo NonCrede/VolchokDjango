@@ -6,7 +6,7 @@ window.onload = function () {
   let jsonData = loadJson('#jsonData');  //Принятие запроса из базы Django
 
 let text = jsonData.map((item) => item.question_text);
-let array = jsonData.map((item) => item.question_number);
+let array = jsonData.map((item) => item.question_id);
 let array2 = [];
 let arrayinp = [];
 let color =[];
@@ -18,6 +18,11 @@ for(let i = 0; i < array.length; i++) {
     b = b + 1;
     array2.push(0);
 }
+
+for (let i = 0; i < array.length; i++) {
+    array[i] = arrayinp[i];
+}
+
 console.log(array);
 console.log(arrayinp);
 for (let i = 0; i < 100; i++) {
@@ -115,9 +120,9 @@ ptr.addEventListener("click", function(){ //Запуск анимации стр
     ptr.style.transition = "transform "+2500 +"ms";
     ptr.style.transform = "rotate("+ (array2[o]) + "deg)";
     function update(){
-        color[[array[o]] - 1] = "#937e88";
+        color[[array[o] - 1]] = "#937e88";
         myPiechart.draw();
-        document.getElementById("p1").innerHTML=[text[array[o] - 1]];
+        document.getElementById("p1").innerHTML=[text[o]];
         console.log(text);
         o = o + 1;
     }

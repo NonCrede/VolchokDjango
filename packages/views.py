@@ -3,14 +3,15 @@ from .forms import *
 from .models import *
 
 def add(request):
-    #choice = Multi(request.POST)
     package_form = addPackageForm(request.POST)
-    form = addQuestionForm(request.POST)
-    if form.is_valid() | package_form.is_valid():
+    form = addQuestionForm(request.POST, request.FILES)
+    if form.is_valid() and package_form.is_valid():
         # print(form.cleaned_data)
-        package_form.save()
         form.save()
-        #choice.save()
+        package_form.save()
+    else:
+        package_form = addPackageForm()
+        form = addQuestionForm()
 
     context = {'package_form': package_form, 'form': form}
     return render(request, 'packages/add.html', context)

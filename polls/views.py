@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseNotFound, Http404
 from django.template import loader
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Question
+from packages.models import *
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -18,12 +18,10 @@ class SomeTemplateView(TemplateView):
         context['data'] = json.dumps(
             [
                 {
-                    'id': obj.id,
+                    'question_id': obj.id,
                     'question_text': obj.question_text,
-                    'question_number': obj.question_number
-
                 }
-                for obj in Question.objects.all()
+                for obj in Ques.objects.all()
             ]
         )
 
