@@ -25,8 +25,8 @@ from polls.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls')),
-    path('polls/',  include('polls.urls')),
+    path('login', include('accounts.urls')),
+    path('',  include('polls.urls')),
     path('packages/',  include('packages.urls')),
 ]
 

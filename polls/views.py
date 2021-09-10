@@ -21,7 +21,7 @@ class SomeTemplateView(TemplateView):
                     'question_id': obj.id,
                     'question_text': obj.question_text,
                 }
-                for obj in Ques.objects.all()
+                for obj in Questions.objects.all()
             ]
         )
 

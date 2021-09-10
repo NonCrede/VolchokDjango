@@ -10,7 +10,7 @@ class addPackageForm(forms.ModelForm):
 
 class addQuestionForm(forms.ModelForm):
     class Meta:
-        model = Ques
+        model = Questions
         fields = ['question_text', 'photo']
         widgets = {
             'question_text': forms.TextInput(attrs={'class': 'form-input'}),
