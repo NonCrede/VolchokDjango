@@ -12,10 +12,11 @@ import base64
 from io import BytesIO
 import PIL
 from PIL import Image
+import os
 
 
 def im_2_b64(image):
-    with open("media/" + image, "rb") as image_file:
+    with open("media/"+image, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
 
     print(encoded_string)
