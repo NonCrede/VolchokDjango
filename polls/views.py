@@ -16,11 +16,12 @@ import os
 
 
 def im_2_b64(image):
-    with open("media/"+image, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
+    if len(image) > 2:
+        with open("media/" + image, mode="rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read()).decode('latin1')
 
-    print(encoded_string)
-    return encoded_string
+        return encoded_string
+
 
 
 class SomeTemplateView(TemplateView):
