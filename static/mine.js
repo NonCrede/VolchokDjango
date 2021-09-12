@@ -7,6 +7,8 @@ window.onload = function () {
 
 let text = jsonData.map((item) => item.question_text);
 let array = jsonData.map((item) => item.question_id);
+let image = jsonData.map((item) => item.photo);
+console.log(image)
 let array2 = [];
 let arrayinp = [];
 let color =[];

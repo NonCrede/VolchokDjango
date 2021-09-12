@@ -4,6 +4,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib import admin
 from django.views.generic import TemplateView
+import base64
+import os
 
 
 class Questions(models.Model):
