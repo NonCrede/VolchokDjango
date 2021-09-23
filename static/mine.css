@@ -18,3 +18,12 @@
     transform-origin: bottom;
     animation-fill-mode: both;
 }
+
+.word {
+    width: 1000px;
+    background: #f0f0f0;
+    border: 1px solid #333;
+    padding: 10px;
+    font-size: 23px;
+    word-break: break-all;
+   }

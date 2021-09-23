@@ -18,7 +18,7 @@ import os
 def im_2_b64(image):
     if len(image) > 2:
         with open("media/" + image, mode="rb") as image_file:
-            encoded_string = base64.b64encode(image_file.read()).decode('latin1')
+            encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
 
         return encoded_string
 

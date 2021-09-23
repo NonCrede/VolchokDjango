@@ -3,12 +3,11 @@ function loadJson(selector) {
 }
 
 window.onload = function () {
-  let jsonData = loadJson('#jsonData');  //Принятие запроса из базы Django
+  let jsonData = loadJson('#jsonData');
 
 let text = jsonData.map((item) => item.question_text);
 let array = jsonData.map((item) => item.question_id);
 let image = jsonData.map((item) => item.photo);
-console.log(image)
 let array2 = [];
 let arrayinp = [];
 let color =[];
@@ -125,7 +124,10 @@ ptr.addEventListener("click", function(){ //Запуск анимации стр
         color[[array[o] - 1]] = "#937e88";
         myPiechart.draw();
         document.getElementById("p1").innerHTML=[text[o]];
+        console.log(image);
+        document.getElementById('base64image').src = `data:image/png;base64,${image[o]}`;
         console.log(text);
+        console.log(image);
         o = o + 1;
     }
     setTimeout(update, 2500);
